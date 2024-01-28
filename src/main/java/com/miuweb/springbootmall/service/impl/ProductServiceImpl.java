@@ -1,6 +1,9 @@
 package com.miuweb.springbootmall.service.impl;
 
+import javax.validation.Valid;
+
 import com.miuweb.springbootmall.dao.ProductDao;
+import com.miuweb.springbootmall.dto.ProductRequest;
 import com.miuweb.springbootmall.model.Product;
 import com.miuweb.springbootmall.service.ProductService;
 
@@ -17,5 +20,12 @@ public class ProductServiceImpl implements ProductService {
   public Product getProductById(Integer productId) {
     return productDao.getProductById(productId);
   }
+
+  @Override
+  public Integer createProduct(ProductRequest productRequest) {
+    return productDao.createProduct(productRequest);
+  }
+
+  
   
 }
